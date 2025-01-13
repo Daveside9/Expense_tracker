@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Expense</title>
+</head>
+<body>
+    <h1>Edit Expense</h1>
+
+    <form action="{{ url_for('edit_expense', expense_id=expense.id) }}" method="POST">
+        <label for="description">Description:</label>
+        <input type="text" name="description" value="{{ expense.description }}" required><br><br>
+
+        <label for="amount">Amount:</label>
+        <input type="number" name="amount" value="{{ expense.amount }}" required><br><br>
+
+        <label for="category">Category:</label>
+        <input type="text" name="category" value="{{ expense.category }}" required><br><br>
+
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="{{ expense.date }}" required><br><br>
+
+        <button type="submit">Update Expense</button>
+    </form>
+    
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+</body>
+</html>
