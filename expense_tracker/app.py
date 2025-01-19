@@ -62,4 +62,5 @@ def delete_expense(expense_id):
     return redirect(url_for('dashboard'))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Allows Gunicorn or similar servers to run the app
+    app.run(host='0.0.0.0', port=5000)
